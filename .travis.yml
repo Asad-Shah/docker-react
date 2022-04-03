@@ -1,0 +1,7 @@
+sudo: required
+service: 
+  - docker
+before_install:
+  - docker build -t asadshah/docker-react -f Dockerfile.dev .
+scripts:
+  - docker run asadshah/docker-react npm run test -- --coverage
